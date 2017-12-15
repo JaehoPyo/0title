@@ -1,0 +1,13 @@
+D:\workspace(VS)\AWS\AWS\bin\Debug\AWS.exe
+D:\workspace(VS)\AWS\AWS\bin\Debug\AWS.pdb
+D:\workspace(VS)\AWS\AWS\obj\Debug\ResolveAssemblyReference.cache
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.Properties.Resources.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.csproj.GenerateResource.Cache
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.exe
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.pdb
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.form.U110.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.form.U120.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.form.Login.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.form.U240.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.form.U310.resources
+D:\workspace(VS)\AWS\AWS\obj\Debug\AWS.Main.resources

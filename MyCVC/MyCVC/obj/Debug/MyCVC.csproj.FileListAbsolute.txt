@@ -1,0 +1,8 @@
+D:\workspace(VS)\MyCVC\MyCVC\bin\Debug\MyCVC.exe
+D:\workspace(VS)\MyCVC\MyCVC\bin\Debug\MyCVC.pdb
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\ResolveAssemblyReference.cache
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\MyCVC.Properties.Resources.resources
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\MyCVC.csproj.GenerateResource.Cache
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\MyCVC.exe
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\MyCVC.pdb
+D:\workspace(VS)\MyCVC\MyCVC\obj\Debug\MyCVC.MyCVC.resources
