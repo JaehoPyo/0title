@@ -1,4 +1,5 @@
 "# 0title"
+Visual Studio 2008에서 제작 (.Net 3.5)
 C# PLC와 통신프로그램, 연습 Source
 채팅수준의 프로그램입니다. (1:1이므로 1Thread만 생성)
 MyCVC : 컨베이어 PLC역할을 하는 프로그램
