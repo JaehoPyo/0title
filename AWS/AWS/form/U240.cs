@@ -41,7 +41,8 @@ namespace AWS.form
             dataTable = DBUtils.GetSelectTable(sql);
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                ListViewItem viewItem = new ListViewItem(dataTable.Rows[i]["dBR_DATE"].ToString());  // 첫번째 열의 데이터는 뷰아이템 객체 생성시 할당
+                ListViewItem viewItem = new ListViewItem(" ");  // 첫번째 열의 데이터는 뷰아이템 객체 생성시 할당
+                viewItem.SubItems.Add(dataTable.Rows[i]["dBR_DATE"].ToString());
                 viewItem.SubItems.Add(dataTable.Rows[i]["iBR_TIME"].ToString());
                 viewItem.SubItems.Add(dataTable.Rows[i]["HOST_ALC_CODE"].ToString());
                 viewItem.SubItems.Add(dataTable.Rows[i]["BR_ALC_NAME"].ToString());
@@ -64,5 +65,29 @@ namespace AWS.form
             ListUpdate();
             SelectTimer.Enabled = true;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Form preview = printPreviewDialog as Form;
+            // Start Maximized
+            preview.WindowState = FormWindowState.Maximized;
+            // Start at 100% Scale
+            printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
+            // Display
+            preview.ShowDialog();
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Print the ListView
+            listView1.PrintData(e.MarginBounds.Location, e.Graphics, Brushes.Black, Brushes.Blue, Pens.Blue);
+        }
+
+        private void btnPrinterSetup_Click(object sender, EventArgs e)
+        {
+            pageSetupDialog.ShowDialog();
+        }
+
+
     }
 }

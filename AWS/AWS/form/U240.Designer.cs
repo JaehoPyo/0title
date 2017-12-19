@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U240));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnPageSetup = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.cbAutoSelect = new System.Windows.Forms.CheckBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -44,17 +47,47 @@
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.SelectTimer = new System.Windows.Forms.Timer(this.components);
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
+            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.btnPageSetup);
+            this.pnlTop.Controls.Add(this.btnPrint);
             this.pnlTop.Controls.Add(this.cbAutoSelect);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1024, 61);
             this.pnlTop.TabIndex = 0;
+            // 
+            // btnPageSetup
+            // 
+            this.btnPageSetup.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPageSetup.Location = new System.Drawing.Point(896, 0);
+            this.btnPageSetup.Name = "btnPageSetup";
+            this.btnPageSetup.Size = new System.Drawing.Size(66, 61);
+            this.btnPageSetup.TabIndex = 2;
+            this.btnPageSetup.Text = "용지 설정";
+            this.btnPageSetup.UseVisualStyleBackColor = true;
+            this.btnPageSetup.Click += new System.EventHandler(this.btnPrinterSetup_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPrint.Location = new System.Drawing.Point(962, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(62, 61);
+            this.btnPrint.TabIndex = 1;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbAutoSelect
             // 
@@ -69,6 +102,7 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -81,6 +115,7 @@
             this.columnHeader10,
             this.columnHeader11});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 61);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1024, 707);
@@ -91,33 +126,38 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "수신일자";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader1.Width = 70;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "수신시간";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 70;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "차량코드";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 70;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "차량정보";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 107;
+            this.columnHeader4.Width = 180;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "COMMIT NO";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 89;
+            this.columnHeader5.Width = 90;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "BODY NO";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 90;
             // 
             // columnHeader7
             // 
@@ -149,6 +189,30 @@
             this.SelectTimer.Enabled = true;
             this.SelectTimer.Interval = 2000;
             this.SelectTimer.Tick += new System.EventHandler(this.SelectTimer_Tick);
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            // 
+            // pageSetupDialog
+            // 
+            this.pageSetupDialog.Document = this.printDocument;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = " ";
+            this.columnHeader12.Width = 10;
             // 
             // U240
             // 
@@ -191,5 +255,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.Timer SelectTimer;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPageSetup;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
     }
 }

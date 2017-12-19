@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Lib\DBUtils.cs" />
     <Compile Include="Lib\h_MainLib.cs" />
+    <Compile Include="Lib\ListViewExtensions.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
